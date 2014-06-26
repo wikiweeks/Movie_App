@@ -1,0 +1,13 @@
+<h1>Movies#index</h1>
+<p>Welcome to Retflix! See our collection of movies below.</p>
+
+<ul>
+<% @movies.each do |x| %>
+<li><%=	x.title %> <%= link_to 'Show', movie_path(x) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Add a new movie', new_movie_path %>
+
+
+<p>Find me in app/views/movies/index.html.erb</p>

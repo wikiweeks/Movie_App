@@ -4,18 +4,13 @@ class MoviesController < ApplicationController
   end
 
    def show
-	# @movie = Movie.find(params[:id])
-	# @movie = Movie.find_by id=""
-		@movie = Movie.find(params[:id])
-  end 
+  # KH: (remove unused code before committing)
+    @movie = Movie.find(params[:id])
+  end
 
   def new
-  	@movie = Movie.new
-	end
-
-	# def create
-	# render plain: params[:movie].inspect
- #  end
+    @movie = Movie.new
+  end
 
 # below based on the forms creation guide
   def create
@@ -39,6 +34,7 @@ class MoviesController < ApplicationController
 	end
 # for resolving security issues based on guide
 private
+  # KH: maybe name this movie_params? id_params doesn't make clear what it is/does.
   def id_params
     params.require(:movie).permit(:title, :description, :year_released)
   end
